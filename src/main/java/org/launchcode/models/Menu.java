@@ -11,40 +11,40 @@ import java.util.List;
 @Entity
 public class Menu {
 
-@Id
-@GeneratedValue
-private int id;
+    @Id
+    @GeneratedValue
+    private int id;
 
-@NotNull
-private String name;
+    @NotNull
+    private String name;
 
-@ManyToMany
-private List<Cheese> cheeses;
+    @ManyToMany
+    private List<Cheese> cheeses;
 
     public void addItem(Cheese item){
-    this.cheeses.add(item);
+        this.cheeses.add(item);
     }
 
     public Menu(){
     }
 
     public Menu(String name){
-    this.name = name;
+        this.name = name;
     }
 
     public int getId() {
-    return id;
+        return id;
     }
 
     public String getName() {
-    return name;
+        return name;
     }
 
     public void setName(String name) {
-    this.name = name;
+        this.name = name;
     }
 
     public List<Cheese> getCheeses(){
         return cheeses;
-        }
-        }
+    }
+}
