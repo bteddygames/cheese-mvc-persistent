@@ -9,11 +9,11 @@
         <table class="table">
             <tr>
                 <td>
-                    <ul>
-                        <li th:each="cheese: ${menu.cheeses}">
-                            <span th:text="${cheese.name}"></span>
-                        </li>
-                    </ul>
+                    <form method="post" style="max-width:600px;" th:object="${menu}">
+                        <p th:unless="${menu.cheeses.size()}"><i>Add some cheese to this menu!</i></p>
+                        <li th:each="cheese : ${menu.cheeses}" th:text="${cheese.name}"></li>
+                        <p><a th:href="'/menu/add-item/' + ${menu.id}">Add Cheese</a></p>
+                    </form>
                 </td>
             </tr>
             <tr>

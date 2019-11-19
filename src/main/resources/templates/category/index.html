@@ -12,12 +12,12 @@
 
 <table>
     <tr th:each="category : ${categories}">
-        <td th:text="${category.name}"></td>
+        <td th:href="'/cheese/category?id=' + ${category.id}" th:text="${category.name}"></td>
     </tr>
 
 </table>
 
-<a href="category/add">add</a>
+<a href="category/add">Add Category</a>
 
 </body>
 </html>
